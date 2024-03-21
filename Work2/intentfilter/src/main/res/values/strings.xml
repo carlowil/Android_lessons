@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">IntentFilter</string>
+    <string name="brause">Браузер</string>
+    <string name="send_data">Отправляем данные</string>
+</resources>

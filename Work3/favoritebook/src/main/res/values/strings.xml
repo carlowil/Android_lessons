@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FavoriteBook</string>
+    <string name="favorite_book_string">Тут появится название вашей любимой книги!</string>
+    <string name="button_text">Открыть экран ввода данных</string>
+    <string name="fav_dev_book">Любимая книга разработчика</string>
+    <string name="fav_dev_book_edit">Введите название Вашей любимой книги</string>
+    <string name="send">Отправить</string>
+</resources>

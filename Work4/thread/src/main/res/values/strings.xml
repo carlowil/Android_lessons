@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">thread</string>
+    <string name="avg_text">Среднее кол-ство ваших пар будет здесь</string>
+    <string name="pars">Кол-ство пар</string>
+    <string name="days">Количество дней</string>
+    <string name="count">Посчитать</string>
+</resources>

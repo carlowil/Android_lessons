@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/allMusic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/library_music_fill0_wght400_grad0_opsz24" />
+
+        <ImageButton
+            android:id="@+id/musicEcvalizer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/tune_fill0_wght400_grad0_opsz24"
+            android:layout_marginStart="6dp"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/musicImage"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/image_fill0_wght400_grad0_opsz52"/>
+
+    <TextView
+        android:id="@+id/musicName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/your_music_composition_name"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/musicImage"
+        app:layout_constraintStart_toStartOf="@+id/musicImage"
+        app:layout_constraintTop_toBottomOf="@+id/musicImage" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/musicIndicator"
+        android:layout_width="320dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/musicName"
+        app:layout_constraintStart_toStartOf="@+id/musicName"
+        app:layout_constraintTop_toBottomOf="@+id/musicName"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/musicIndicator"
+        app:layout_constraintStart_toStartOf="@+id/musicIndicator"
+        app:layout_constraintTop_toBottomOf="@+id/musicIndicator"
+        android:layout_marginTop="12dp"
+        android:padding="12dp">
+
+        <ImageButton
+            android:id="@+id/musicRrev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/skip_previous_fill0_wght400_grad0_opsz24"/>
+
+        <ImageButton
+            android:id="@+id/musicPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/play_arrow_fill0_wght400_grad0_opsz24"/>
+
+        <ImageButton
+            android:id="@+id/musicStop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/pause_fill0_wght400_grad0_opsz24"/>
+
+        <ImageButton
+            android:id="@+id/musicNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/skip_next_fill0_wght400_grad0_opsz24"/>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

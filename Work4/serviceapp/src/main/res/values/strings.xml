@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ServiceApp</string>
+    <string name="your_music_composition_name">Your Music Composition Name</string>
+    <string name="player">Player</string>
+</resources>

@@ -1,0 +1,6 @@
+![image](https://github.com/carlowil/Android_lessons/assets/68204145/a81dd2c2-f7e7-42ca-a91b-e0c86d536135)
+![image](https://github.com/carlowil/Android_lessons/assets/68204145/5b90aa66-1991-417d-be71-9402e2740461)
+![image](https://github.com/carlowil/Android_lessons/assets/68204145/2daedfc3-01b1-47bc-8ea8-60a1b93dd79b)
+![image](https://github.com/carlowil/Android_lessons/assets/68204145/064d402a-3bed-4e1d-a6f3-bd0679d63929)
+![image](https://github.com/carlowil/Android_lessons/assets/68204145/086a1b05-9827-4ef0-acf8-9b940e016aa0)
+![image](https://github.com/carlowil/Android_lessons/assets/68204145/ef9f9a67-c889-40a3-9386-d87034c454ab)

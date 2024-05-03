@@ -28,5 +28,14 @@
             android:icon="@drawable/baseline_download_24"
             android:title="@string/download"/>
 
+        <item
+            android:id="@+id/profileFragment"
+            android:icon="@drawable/baseline_account_circle_24"
+            android:title="@string/profile"/>
+
+        <item
+            android:id="@+id/illuminationFragment"
+            android:icon="@drawable/routine_fill0_wght400_grad0_opsz24"
+            android:title="@string/illumination"/>
     </group>
 </menu>

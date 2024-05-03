@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        checkPernissions()
+        checkPermissions()
 
         val callback = ActivityResultCallback<ActivityResult> {
             if(it.resultCode == Activity.RESULT_OK) {
@@ -88,7 +88,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun checkPernissions() {
+    private fun checkPermissions() {
         val cameraPermissionStatus = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
         val storageReadPermissionStatus = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
         val storagePermissionStatus =

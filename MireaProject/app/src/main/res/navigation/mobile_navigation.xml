@@ -32,7 +32,18 @@
     <fragment
         android:id="@+id/background"
         android:name="ru.mirea.sizov.mireaproject.Background"
-        android:label="fragment_background"
+        android:label="Background"
         tools:layout="@layout/fragment_background" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="ru.mirea.sizov.mireaproject.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/illuminationFragment"
+        android:name="ru.mirea.sizov.mireaproject.IlluminationFragment"
+        android:label="Illumination"
+        tools:layout="@layout/fragment_illumination" />
 
 </navigation>

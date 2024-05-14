@@ -10,10 +10,52 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="File Fragment"
+        android:text="Read encrypted file name:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/fileNameEditText"
+        app:layout_constraintEnd_toEndOf="@+id/fileNameEditText"
+        app:layout_constraintStart_toStartOf="@+id/fileNameEditText"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/fileNameEditText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/fileTextView"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:scrollbars="vertical"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="@+id/fileNameEditText"
+        app:layout_constraintStart_toStartOf="@+id/fileNameEditText"
+        app:layout_constraintTop_toBottomOf="@+id/fileNameEditText" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addEncryptedFileFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_add_24"
+        app:layout_constraintEnd_toEndOf="@+id/fileTextView"
+        app:layout_constraintStart_toStartOf="@+id/fileTextView"
+        app:layout_constraintTop_toBottomOf="@+id/fileTextView"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/readFileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Read file"
+        app:layout_constraintEnd_toEndOf="@+id/addEncryptedFileFab"
+        app:layout_constraintStart_toStartOf="@+id/addEncryptedFileFab"
+        app:layout_constraintTop_toBottomOf="@+id/addEncryptedFileFab"
+        android:layout_marginTop="8dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

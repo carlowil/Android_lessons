@@ -7,6 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import androidx.fragment.app.FragmentTransaction
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileInputStream
@@ -48,6 +54,36 @@ class FileFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val addEncryptedFileFab = view.findViewById<FloatingActionButton>(R.id.addEncryptedFileFab)
+        val readFileButton = view.findViewById<Button>(R.id.readFileButton)
+        val fileTextView = view.findViewById<TextView>(R.id.fileTextView)
+        val fileNameEditText = view.findViewById<EditText>(R.id.fileNameEditText)
+        val filesHandler = FilesHandler()
+
+        val readable = filesHandler.isExternalStorageReadable()
+        val writable = filesHandler.isExternalStorageWritable()
+
+        readFileButton.setOnClickListener {
+            val name = fileNameEditText.text.toString()
+            if (name.isBlank()) {
+                Toast.makeText(requireContext(), "Name need to passed!", Toast.LENGTH_SHORT).show()
+            } else {
+                if (readable) {
+                    fileTextView.text = filesHandler
+                        .decryptString(filesHandler.readFileFromExternalStorage(name)
+                                                    .joinToString(""))
+                }
+            }
+        }
+
+        addEncryptedFileFab.setOnClickListener {
+            if (writable) {
+                val dialog = FileWriteDialogFragment()
+                val manager = requireActivity().supportFragmentManager
+                val transaction: FragmentTransaction = manager.beginTransaction()
+                dialog.show(transaction, "dialog")
+            }
+        }
         super.onViewCreated(view, savedInstanceState)
     }
 

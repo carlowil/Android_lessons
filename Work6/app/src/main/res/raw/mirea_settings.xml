@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="GROUP">БСБО-10-21</string>
+    <int name="NUMBER" value="23" />
+    <string name="FILM">Я смотрю аниме</string>
+</map>

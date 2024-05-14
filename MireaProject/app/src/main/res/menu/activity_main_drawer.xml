@@ -37,5 +37,11 @@
             android:id="@+id/illuminationFragment"
             android:icon="@drawable/routine_fill0_wght400_grad0_opsz24"
             android:title="@string/illumination"/>
+
+        <item
+            android:id="@+id/fileFragment"
+            android:icon="@drawable/folder_open_24dp_fill0_wght400_grad0_opsz24__1_"
+            android:title="@string/file_management"/>
+
     </group>
 </menu>

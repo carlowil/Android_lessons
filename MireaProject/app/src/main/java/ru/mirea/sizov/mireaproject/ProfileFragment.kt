@@ -1,6 +1,7 @@
 package ru.mirea.sizov.mireaproject
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
 import android.media.MediaRecorder
@@ -14,6 +15,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.ActivityResultLauncher
@@ -52,6 +55,12 @@ class ProfileFragment : Fragment() {
     var isStartRecording = true
     var isStartPlaying = true
 
+    private lateinit var nameEditText: EditText
+    private lateinit var surnameEditText: EditText
+    private lateinit var jobEditText: EditText
+    private lateinit var ageEditText: EditText
+    private lateinit var saveButton: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -69,6 +78,34 @@ class ProfileFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val sharedPref = requireContext().getSharedPreferences("profile", Context.MODE_PRIVATE)
+        nameEditText = view.findViewById(R.id.nameEditText)
+        surnameEditText = view.findViewById(R.id.surnameEditText)
+        ageEditText = view.findViewById(R.id.ageEditText)
+        jobEditText = view.findViewById(R.id.jobEditText)
+        saveButton = view.findViewById(R.id.saveProfileButton)
+
+        if (sharedPref.all.isNotEmpty()) {
+            nameEditText.setText(sharedPref.getString("NAME", "").toString())
+            surnameEditText.setText(sharedPref.getString("SURNAME", "").toString())
+            ageEditText.setText(sharedPref.getInt("AGE", 0).toString())
+            jobEditText.setText(sharedPref.getString("JOB", "").toString())
+        }
+
+        saveButton.setOnClickListener {
+            val sharedEditor = sharedPref.edit()
+
+            sharedEditor.putString("NAME", nameEditText.text.toString())
+            sharedEditor.putString("SURNAME", surnameEditText.text.toString())
+            sharedEditor.putInt("AGE", ageEditText.text.toString().toInt())
+            sharedEditor.putString("JOB", jobEditText.text.toString())
+
+            sharedEditor.apply()
+
+            Toast.makeText(requireContext(), "Data saved!", Toast.LENGTH_SHORT).show()
+        }
+
+
         recordButton = view.findViewById<FloatingActionButton>(R.id.recordButton)
         playButton = view.findViewById<FloatingActionButton>(R.id.playButton)
         playButton.setEnabled(false)

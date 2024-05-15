@@ -18,4 +18,9 @@
     <string name="profile">Profile</string>
     <string name="illumination">Illumination</string>
     <string name="file_management">File Management</string>
+    <string name="sign_in">Sign In</string>
+    <string name="create_account">Create Account</string>
+    <string name="log_out">Log out</string>
+    <string name="networking">Networking</string>
+
 </resources>

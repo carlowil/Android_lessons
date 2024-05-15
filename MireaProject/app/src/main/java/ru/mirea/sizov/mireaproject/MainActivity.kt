@@ -1,9 +1,11 @@
 package ru.mirea.sizov.mireaproject
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -34,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         checkPermissions()
 
         setSupportActionBar(binding.appBarMain.toolbar)
+        binding.appBarMain.toolbar
 
         binding.appBarMain.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -47,7 +50,9 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_brouser, R.id.background, R.id.profileFragment, R.id.illuminationFragment, R.id.fileFragment
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
+                R.id.nav_brouser, R.id.background, R.id.profileFragment,
+                R.id.illuminationFragment, R.id.fileFragment, R.id.networkingFragment
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -92,7 +97,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
-        permissions: Array<String?>,
+        permissions: Array<out String>,
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
@@ -103,4 +108,15 @@ class MainActivity : AppCompatActivity() {
                     && grantResults[1] == PackageManager.PERMISSION_GRANTED)
         }
     }
+
+    override fun onOptionsItemSelected(item: MenuItem) =
+        when(item.itemId) {
+            R.id.action_logout -> {
+                super.finish()
+                AuthHandler().signOut()
+            }
+            else -> {
+                super.onOptionsItemSelected(item)
+            }
+        }
 }

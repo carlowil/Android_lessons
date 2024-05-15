@@ -50,5 +50,10 @@
         android:name="ru.mirea.sizov.mireaproject.FileFragment"
         android:label="File management"
         tools:layout="@layout/fragment_file" />
+    <fragment
+        android:id="@+id/networkingFragment"
+        android:name="ru.mirea.sizov.mireaproject.NetworkingFragment"
+        android:label="fragment_networking"
+        tools:layout="@layout/fragment_networking" />
 
 </navigation>

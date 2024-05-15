@@ -43,5 +43,10 @@
             android:icon="@drawable/folder_open_24dp_fill0_wght400_grad0_opsz24__1_"
             android:title="@string/file_management"/>
 
+        <item
+            android:id="@+id/networkingFragment"
+            android:icon="@drawable/baseline_cloud_24"
+            android:title="@string/networking"/>
+
     </group>
 </menu>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "771815973741",
+    "project_id": "work7-648bf",
+    "storage_bucket": "work7-648bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:771815973741:android:9d66533aa3061d9b7a3064",
+        "android_client_info": {
+          "package_name": "ru.mirea.sizov.firebaseauth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2Lh97gjeP3q4KPphZQC0TKlAgnh5CKno"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

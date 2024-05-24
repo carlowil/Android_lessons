@@ -53,7 +53,12 @@
     <fragment
         android:id="@+id/networkingFragment"
         android:name="ru.mirea.sizov.mireaproject.NetworkingFragment"
-        android:label="fragment_networking"
+        android:label="Networking"
         tools:layout="@layout/fragment_networking" />
+    <fragment
+        android:id="@+id/placesFragment"
+        android:name="ru.mirea.sizov.mireaproject.PlacesFragment"
+        android:label="Places"
+        tools:layout="@layout/fragment_places" />
 
 </navigation>

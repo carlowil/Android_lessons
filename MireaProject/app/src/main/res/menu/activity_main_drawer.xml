@@ -48,5 +48,10 @@
             android:icon="@drawable/baseline_cloud_24"
             android:title="@string/networking"/>
 
+        <item
+            android:id="@+id/placesFragment"
+            android:icon="@drawable/navigation"
+            android:title="Places"/>
+
     </group>
 </menu>

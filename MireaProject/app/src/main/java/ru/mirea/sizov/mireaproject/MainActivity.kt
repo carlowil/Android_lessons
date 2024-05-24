@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
                 R.id.nav_brouser, R.id.background, R.id.profileFragment,
-                R.id.illuminationFragment, R.id.fileFragment, R.id.networkingFragment
+                R.id.illuminationFragment, R.id.fileFragment, R.id.networkingFragment, R.id.placesFragment
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -76,10 +76,12 @@ class MainActivity : AppCompatActivity() {
         val storageReadPermissionStatus = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
         val storagePermissionStatus = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
         val internetPermissionStatus = ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET)
+        val fineLocationPermissionStatus = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
 
         if (cameraPermissionStatus == PackageManager.PERMISSION_GRANTED && storagePermissionStatus
             == PackageManager.PERMISSION_GRANTED && storageReadPermissionStatus == PackageManager.PERMISSION_GRANTED
             && audioPermissionStatus == PackageManager.PERMISSION_GRANTED && internetPermissionStatus == PackageManager.PERMISSION_GRANTED
+            && fineLocationPermissionStatus == PackageManager.PERMISSION_GRANTED
         ) {
             isWork = true
         } else {
@@ -89,7 +91,8 @@ class MainActivity : AppCompatActivity() {
                     Manifest.permission.RECORD_AUDIO,
                     Manifest.permission.WRITE_EXTERNAL_STORAGE,
                     Manifest.permission.READ_EXTERNAL_STORAGE,
-                    Manifest.permission.INTERNET
+                    Manifest.permission.INTERNET,
+                    Manifest.permission.ACCESS_FINE_LOCATION
                 ), REQUEST_CODE_PERMISSION
             )
         }
@@ -104,8 +107,7 @@ class MainActivity : AppCompatActivity() {
         if (requestCode == REQUEST_CODE_PERMISSION) {
             //	permission	granted
             isWork = (grantResults.size > 0
-                    && grantResults[0] == PackageManager.PERMISSION_GRANTED
-                    && grantResults[1] == PackageManager.PERMISSION_GRANTED)
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED)
         }
     }
 
